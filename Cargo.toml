@@ -1,0 +1,16 @@
+[package]
+name = "humidity-esp-hal"
+version = "0.1.0"
+authors = ["Vlad Onis <vladonis.biz+opensource@gmail.com>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[profile.release]
+debug = true
+
+[dependencies]
+esp32c3-hal = { version = "0.15.0", features = ["async", "embassy", "embassy-time-timg0", "embassy-executor-thread", "embedded-io"] }
+esp-backtrace = { version = "0.11.0", features = ["esp32c3", "panic-handler", "exception-handler", "println"] }
+esp-println = { version = "0.9.0", features = ["esp32c3"] }
+dht-sensor = "0.2.1"
+heapless = "0.8.0"
